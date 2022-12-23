@@ -5,9 +5,9 @@
  -----------------------------------------
  * Name of the Function:  modify_data function
  *  
- * Date of creation:      16/11/2022
+ * Date of creation:      08/12/2022
  *
- * Author of module:      Vishal Wagh, Pavan D
+ * Author of module:      Harish Chandra AN
  *
  * Description of module: 
  *                      In main menu,when modify_data, display a list of items which user can modify like Name, 
@@ -21,7 +21,7 @@
 
  * Global variables accessed or modified by the module: Access Structure pointer, TS_India_Employee_DB
 
- * Revision/Modification History:25/11/2022
+ * Revision/Modification History:15/12/2022
  ***/
 
 
@@ -43,7 +43,7 @@ void modify_display(employee_database *temp)
 	printf("Employee Contact number	 : %s\n",temp->contact_no);
 	printf("Employee Tech Area	 : %s\n",temp->tech_area);
 	printf("Employee Project info	 : %s\n",temp->project_info);
-	printf("Employee Status 	 : %s\n",temp->status);
+//	printf("Employee Status 	 : %s\n",temp->status);
 	printf("\n\n");
 
 }
@@ -54,68 +54,57 @@ void modify_input(employee_database *temp)
 	unsigned char str[100];
 	while(1)
 	{    
-		printf("\n\n1. EMP_ID\n2. Name\n3. Gender\n4. EMAIL_ID\n5. Band\n6. Date of joining\n7. Contact_number\n8. Reporting_manager\n9. Tech Area\n10. Project_info\n11. status\nPlease enter your choice to modify your details: ");
+		printf("\n\n1. Name\n2. Band\n3. Contact_number\n4. Reporting_manager\n5. Tech Area\n6. Project_info\n\nPlease enter your choice to modify your details: ");
 
 		scanf("%d",&choice);
 		switch(choice)
 		{
-			case 1:
-				printf("Sorry. You can't edit the Employee ID\n");
-				//exit(0);  	// It will exit from the application
-				break;    	// It will go back to main function
-				//continue;	// It skip below lines and again ask the user choice to modify the details
 
-			case 2:
+			case 1:
 				printf("Please Enter Employee Name: ");
 				scanf("\n%[^\n]s",str);			// Reading Employee Name from the user
+/*	scanf(" %[^\n]s",a);
+	
+		for(i=0;a[i]!='\0';i++)
+		{
+			if((a[i]<=65)||(a[i]>=122))
+			{
+				printf("invalid\n");
+				goto empname;
+			}
+		}
+
+		strcpy(temp->name,a);*/
 				strcpy(temp->name,str);			// Copying of Employee Name into linked list
 				printf("Employee Name modified successfully");
 				break;
-			case 3:
-				printf("Sorry. You can't edit the Gender\n");
-				break;
-			case 4:
-				printf("Sorry. You can't edit the Email ID\n");
-				break; 
-			case 5:
+			case 2:
 				printf("Please Enter Employee Band: ");
 				scanf("%s",temp->band);			// Reading Employee Band from the user
 				printf("Employee Band modified successfully");
 				break;
-
-			case 6:
-				printf("Sorry. You can't edit the Date of joining\n");
-				break;
-
-			case 7:
+			case 3:
 				printf("Please Enter Employee Contact_number: ");
 				scanf("\n%[^\n]s",temp->contact_no);	// Reading Employee Contact Number from the user
 				printf("Employee Contact_number modified successfully");
 				break;
 
-			case 8:
+			case 4:
 				printf("Please Enter Employee Reporting_manager: ");
 				scanf("\n%[^\n]s",temp->reporting_manager);	// Reading Employee Reporting Manager from the user
 				printf("Employee Reporting_manager modified successfully");
 				break;
-			case 9:
+			case 5:
 				printf("Please Enter Employee Tech Area: ");
 				scanf("\n%[^\n]s",temp->tech_area);		// Reading Employee Tech Area from the user
 				printf("Employee Tech Area modified successfully");
 				break; 
 
-			case 10:
+			case 6:
 				printf("Enter Employee Project_info: ");
 				scanf("\n%[^\n]s",temp->project_info);		// Reading Employee Project Info from the user
 				printf("Employee Project_info modified successfully");
 				break;
-
-			case 11:
-				printf("Please Enter Employee Status: ");
-				scanf("\n%[^\n]s",temp->status);		// Reading Employee Status from the user
-				printf("Record modified successfully");
-				break;
-				
 			default:
 				printf("Invalid Selection");
 				break;

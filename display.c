@@ -12,7 +12,7 @@ void view(employee_database *new)
 		printf("Email_id                : %s\n",new->email_id);
 		printf("Band                    : %s\n",new->band);
 		printf("DOJ                     : %s\n",new->doj);
-		printf("Status                  : %s\n",new->status);
+	//	printf("status			:%s\n",new->status);	
 		printf("Mobile                  : %s\n",new->contact_no);
 		printf("Reporting_manager       : %s\n",new->reporting_manager);
 		printf("Reportee                : %s\n",new->reportees);

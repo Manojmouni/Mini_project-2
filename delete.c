@@ -4,9 +4,9 @@
  -----------------------------------------
  * Name of the Function:  delete_data function
  *  
- * Date of creation:      16/11/2022
+ * Date of creation:      11/12/2022
  *
- * Author of module:      Nikhil K
+ * Author of module:     Ajay.A
  *
  * Description of module: 
  *                      In main menu,when delete_data selected the user will ask for employee id, delete employee details 
@@ -16,7 +16,7 @@
 
  * Global variables accessed or modified by the module: Access Structure pointer, TS_India_Employee_DB
 
- * Revision/Modification History:25/11/2022
+ * Revision/Modification History:15/12/2022
  ***/
 
 
@@ -37,14 +37,13 @@ void delete_data(employee_database **emp)
 			printf("Database is Empty !!!\n");
 			return;
 		}
-			else if((strcmp((*emp)->emp_id,num))==0)
+		else if((strcmp((*emp)->emp_id,num))==0)
 		{
 			printf("|***************Warning****************|\n");
 			printf("If you delete employee detials once's you can not recovery it....\nPress Yes|No \n");
 			scanf(" %c",&check);
 			if((check == 'y')||(check == 'Y'))
 			{
-				database_delete(temp);
 				*emp = temp->link;
 				free(temp);
 				return ;
@@ -55,12 +54,11 @@ void delete_data(employee_database **emp)
 		else if((strcmp(temp->emp_id,num))==0)
 		{
 			printf("|***************Warning****************|\n");
-                        printf("If you delete employee detials once's you can not recovery it....\nPress Yes|No \n");
-                        scanf(" %c",&check);
+			printf("If you delete employee detials once's you can not recovery it....\nPress Yes|No \n");
+			scanf(" %c",&check);
 			if((check == 'y')||(check == 'Y'))
-                        {
+			{
 				printf("deleted\n");
-				database_delete(temp);
 				last->link = temp->link;
 				free(temp);
 				sleep(3);

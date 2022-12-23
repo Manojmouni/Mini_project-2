@@ -5,9 +5,9 @@
  -----------------------------------------
  * Name of the Function:  view_data function
  *  
- * Date of creation:      16/11/2022
+ * Date of creation:      11/12/2022
  *
- * Author of module:      Urmila Lakade
+ * Author of module:    k manoj kumar 
  *
  * Description of module: 
  * 			In main menu,when view_data selected its takes employ ID as a input and
@@ -44,7 +44,6 @@ void view_data(char *employ_id,employee_database *head)
 				printf("Email_id                : %s\n",temp->email_id);
 				printf("Band                    : %s\n",temp->band);
 				printf("DOJ                     : %s\n",temp->doj);
-				printf("Status                  : %s\n",temp->status);
 				printf("Mobile                  : %s\n",temp->contact_no);
 				printf("Reporting_manager       : %s\n",temp->reporting_manager);
 				printf("Reportee                : %s\n",temp->reportees);

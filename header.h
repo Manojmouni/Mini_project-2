@@ -7,11 +7,11 @@ typedef struct Database
 {
         char emp_id[10];
         char name[50];
-        char gender[5];
+        char gender[1];
         char email_id[50];
         char band[10];
         char doj[20];
-        char status[20];
+      //char status[20];
         char contact_no[15];
         char reporting_manager[50];
         char reportees[50];
